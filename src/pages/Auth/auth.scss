@@ -73,6 +73,7 @@
             font-family: $main-font;
             font-size: 14px;
             line-height: 1.4;
+            color: #747474;
             text-align: center;
 
             .toggler {
@@ -93,6 +94,20 @@
                     font-size: 16px;
                 }
             }
+
+            @include mq(md) {
+                font-size: 16px;
+            }
+        }
+
+        &--errors {
+            display: inherit;
+            margin-top: 1.5em;
+            font-family: $main-font;
+            font-size: 14px;
+            line-height: 1.4;
+            color: orange;
+            text-align: center;
 
             @include mq(md) {
                 font-size: 16px;
