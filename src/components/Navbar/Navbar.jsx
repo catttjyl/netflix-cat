@@ -6,10 +6,10 @@ import useOutsideClick from "../../hooks/useOutsideClick";
 import { LOGO_URL, PROFILE_PIC_URL } from "../../requests";
 import { FaCaretDown } from "react-icons/fa";
 import { Link, NavLink } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { selectCurrentUser } from "../../redux/user/user.selectors";
 import Searchbar from "../Searchbar/Searchbar";
-import { handleSignOutAsync } from "../../redux/user/user.actions";
+import { useDispatch, useSelector } from "react-redux";
+import { selectCurrentUser } from "../../redux/auth/auth.selectors";
+import { signOutStart } from "../../redux/auth/auth.actions";
 
 const Navbar = () => {
 	const { width } = useViewport();
@@ -130,7 +130,7 @@ const Navbar = () => {
 									{currentUser && (
 										<li
 											className="Navbar__navlinks--link"
-											onClick={() => dispatch(handleSignOutAsync())}
+											onClick={() => dispatch(signOutStart())}
 										>
 											Sign Out
 										</li>

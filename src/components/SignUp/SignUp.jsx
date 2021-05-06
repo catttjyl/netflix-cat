@@ -1,18 +1,21 @@
 import './signUp.scss';
 import InputField from "../InputField/InputField";
+import Loader from "../Loader/Loader";
 import { useForm } from "react-hook-form";
-import { handleSignUpAsync } from "../../redux/user/user.actions";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { signUpStart } from "../../redux/auth/auth.actions";
+import { selectAuthLoadingState } from "../../redux/auth/auth.selectors";
 
 const SignUp = () => {
 	const dispatch = useDispatch();
+	const isLoading = useSelector(selectAuthLoadingState);
 	const { register, handleSubmit, errors, getValues } = useForm({
 		mode: "onTouched"
 	})
 
 	const onSubmit = data => {
-		const { name, email, password } = data;
-		dispatch(handleSignUpAsync(email, password, name));
+		const { displayName, email, password } = data;
+		dispatch(signUpStart({ displayName, email, password }));
 	}
 
 	return (
@@ -20,7 +23,7 @@ const SignUp = () => {
 			<div className="SignUp__form--inputwrp">
 				<InputField
 					type="text"
-					name="name"
+					name="displayName"
 					placeholder="Your name"
 					validationMessage="Please enter your name."
 					validation={register({
@@ -29,6 +32,7 @@ const SignUp = () => {
 						maxLength: 60
 					})}
 					errors={errors}
+					disabled={isLoading}
 				/>
 			</div>
 			<div className="SignUp__form--inputwrp">
@@ -42,6 +46,7 @@ const SignUp = () => {
 						pattern: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
 					})}
 					errors={errors}
+					disabled={isLoading}
 				/>
 			</div>
 			<div className="SignUp__form--inputwrp">
@@ -56,6 +61,7 @@ const SignUp = () => {
 						maxLength: 30,
 					})}
 					errors={errors}
+					disabled={isLoading}
 				/>
 			</div>
 			<div className="SignUp__form--inputwrp">
@@ -73,13 +79,15 @@ const SignUp = () => {
 						}
 					})}
 					errors={errors}
+					disabled={isLoading}
 				/>
 			</div>
 			<button
 				type="submit"
-				className="SignUp__form--button button__submit"
+				className={`SignUp__form--button button__submit ${isLoading && 'loading'}`}
+				disabled={isLoading}
 			>
-				Sign Up
+				{isLoading ? <Loader /> : 'Sign Up'}
 			</button>
 		</form>
 	)

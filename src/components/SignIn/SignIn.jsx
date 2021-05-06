@@ -1,12 +1,15 @@
 import './signIn.scss';
 import InputField from "../InputField/InputField";
+import Loader from "../Loader/Loader";
 import { FcGoogle } from "react-icons/fc";
 import { useForm } from "react-hook-form";
-import { emailSignInStart, googleSignInStart } from "../../redux/user/user.actions";
-import { useDispatch } from "react-redux";
+import { emailSignInStart, googleSignInStart } from "../../redux/auth/auth.actions";
+import { useDispatch, useSelector } from "react-redux";
+import { selectAuthLoadingState } from "../../redux/auth/auth.selectors";
 
 const SignIn = () => {
 	const dispatch = useDispatch();
+	const isLoading = useSelector(selectAuthLoadingState);
 	const { register, handleSubmit, errors } = useForm({
 		mode: "onTouched"
 	})
@@ -29,6 +32,7 @@ const SignIn = () => {
 						pattern: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
 					})}
 					errors={errors}
+					disabled={isLoading}
 				/>
 			</div>
 			<div className="SignIn__form--inputwrp">
@@ -43,21 +47,24 @@ const SignIn = () => {
 						maxLength: 30,
 					})}
 					errors={errors}
+					disabled={isLoading}
 				/>
 			</div>
 			<button
 				type="submit"
-				className="SignIn__form--button button__submit"
+				className={`SignIn__form--button button__submit ${isLoading && 'loading'}`}
+				disabled={isLoading}
 			>
-				Sign in
+				{isLoading ? <Loader /> : 'Sign in'}
 			</button>
 			<button
 				type="button"
-				className="SignIn__form--button button__google"
+				className={`SignIn__form--button button__google ${isLoading && 'loading'}`}
 				onClick={() => dispatch(googleSignInStart())}
+				disabled={isLoading}
 			>
-				<FcGoogle />
-				Sign in with Google
+				{!isLoading && <FcGoogle />}
+				{isLoading ? <Loader /> : 'Sign in with Google'}
 			</button>
 		</form>
 	)

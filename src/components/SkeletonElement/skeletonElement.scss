@@ -1,0 +1,137 @@
+@import '../../scss/mixin';
+@import '../../scss/variables';
+
+$base-color: rgba(#6d6d6e, 0.4);
+$shine-color: rgba(255,255,255,0.2);
+$animation-duration: 2.5s;
+
+@mixin background-gradient {
+  background: #2d2d2d linear-gradient(to right, rgba(#424242, 0.2), rgba(#424242, 0.6) 50%, rgba(#424242, 0.2) 80%) repeat-y 0 0;
+  background-size: 50px 500px;
+}
+
+.Skeleton {
+  background-color: rgba(#6d6d6e, 0.8);
+  margin: 10px 0;
+  border-radius: 4px;
+
+  &__inline {
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+  }
+
+  &.title {
+    width: 50%;
+    height: 35px;
+    margin-bottom: 15px;
+    @include background-gradient;
+    animation: shine $animation-duration infinite cubic-bezier(0.76, 0, 0.24, 1);
+
+    @include mq('lg') {
+      width: 25%;
+      height: 40px;
+      margin-bottom: 20px;
+    }
+  }
+
+
+  &.button {
+    display: inline-block;
+    width: 20%;
+    height: 40px;
+    margin-bottom: 15px;
+    margin-right: 15px;
+    @include background-gradient;
+    animation: shine $animation-duration infinite cubic-bezier(0.76, 0, 0.24, 1);
+
+    @include mq('lg') {
+      width: 10%;
+      height: 45px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &.text {
+    width: 70%;
+    height: 15px;
+    @include background-gradient;
+    animation: shine $animation-duration infinite cubic-bezier(0.76, 0, 0.24, 1);
+
+    @include mq('lg') {
+      width: 40%;
+      height: 20px;
+    }
+  }
+
+  &__Page {
+    .title {
+      width: 45%;
+
+      @include mq('sm') {
+        width: 35%;
+      }
+      @include mq('md') {
+        width: 33%;
+      }
+      @include mq('lg') {
+        width: 25%;
+      }
+    }
+  }
+
+  &.poster {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    min-height: 110px;
+    background-color: #2d2d2d;
+    white-space: normal;
+    vertical-align: top;
+    border-left: 2px solid $black;
+    border-right: 2px solid $black;
+    margin-bottom: 4vw;
+    border-radius: 5px;
+    animation: 2.5s ease-in-out 0s pulse infinite;
+    transition: background-color 0.1s ease-in-out;
+
+    @include mq(330px) {
+      width: 50%;
+      min-height: 130px;
+    }
+    @include mq(625px) {
+      width: 33.3%;
+      min-height: 150px;
+    }
+    @include mq(998px) {
+      width: 25%;
+    }
+    @include mq(1378px) {
+      width: 16.6%;
+    }
+  }
+
+  @for $i from 1 through 6 {
+    &.poster {
+      &:nth-child(#{$i}) {
+        animation-delay: $i * (2.5s / 18);
+      }
+    }
+  }
+}
+
+@keyframes shine {
+  to {
+    background-position: 140% -10%;
+  }
+}
+
+@keyframes pulse {
+  25% {
+    background-color: $shine-color;
+  }
+
+  50% {
+    background-color: #2d2d2d;
+  }
+}
