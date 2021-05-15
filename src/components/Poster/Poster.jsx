@@ -1,4 +1,6 @@
 import "./poster.scss"
+import { motion } from "framer-motion";
+import { posterFadeInVariants } from "../../motionUtils";
 import { BASE_IMG_URL, FALLBACK_IMG_URL } from "../../requests";
 import { FaChevronDown, FaMinus, FaPlay, FaPlus } from "react-icons/fa";
 import useGenreConversion from "../../hooks/useGenreConversion";
@@ -31,7 +33,8 @@ const Poster = result => {
     };
 
     return (
-        <div
+        <motion.div
+            variants={posterFadeInVariants}
             className='Poster'
             onClick={handleModalOpening}
         >
@@ -77,7 +80,7 @@ const Poster = result => {
                     ))}
                 </div>
             </div>
-        </div>
+        </motion.div>
     )
 }
 
