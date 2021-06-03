@@ -4,8 +4,8 @@ import useViewport from "../../hooks/useViewport";
 import useScroll from "../../hooks/useScroll";
 import useOutsideClick from "../../hooks/useOutsideClick";
 import { motion } from "framer-motion";
-import { navbarSlideInVariants } from "../../motionUtils";
-import { LOGO_URL, PROFILE_PIC_URL } from "../../requests";
+import { navbarFadeInVariants } from "../../motionUtils";
+import { LOGO_URL, MOBILE_LOGO_URL, PROFILE_PIC_URL } from "../../requests";
 import { FaCaretDown } from "react-icons/fa";
 import { Link, NavLink } from "react-router-dom";
 import Searchbar from "../Searchbar/Searchbar";
@@ -34,13 +34,13 @@ const Navbar = () => {
 		<>
 			<motion.nav
 				className={`Navbar ${isScrolled ? "Navbar__fixed" : ""}`}
-				variants={navbarSlideInVariants}
+				variants={navbarFadeInVariants}
 				initial="hidden"
 				animate="visible"
 				exit="hidden"
 			>
 				<Link to="/">
-					<img className="Navbar__logo" src={LOGO_URL} alt="Logo" />
+					<img className="Navbar__logo" src={width >= 600 ? LOGO_URL : MOBILE_LOGO_URL} alt="" />
 				</Link>
 				{width >= 1024 ? (
 					<ul className="Navbar__primarynav Navbar__navlinks">
@@ -72,7 +72,7 @@ const Navbar = () => {
 					</ul>
 				) : (
 					<div
-						className={`Navbar__primarynav Navbar__navlinks ${genresNav ? "active" : ""}`}
+						className={`Navbar__primarynav Navbar__navlinks ${isScrolled ? "Navbar__primarynav--scrolled" : ""}`}
 						onClick={() => setGenresNav(!genresNav)}
 					>
 						<span className="Navbar__navlinks--link">Discover</span>
