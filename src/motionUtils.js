@@ -9,8 +9,8 @@ export const staggerOne = {
 }
 
 export const modalVariants = {
-	hidden: { opacity: 0, top: "100%", transition: { type: "spring", stiffness: 210, damping: 25 } },
-	visible: { opacity: 1, top: "50%", transition: { type: "spring", stiffness: 210, damping: 30 } }
+	hidden: { opacity: 0, top: "100%", transition: { duration: .8, ease: defaultEasing } },
+	visible: { opacity: 1, top: "50%", transition: { duration: .8, ease: defaultEasing } }
 }
 
 export const modalOverlayVariants = {
@@ -28,7 +28,7 @@ export const authFadeInUpVariants = {
 	animate: { y: 0, opacity: 1, transition: { duration: .8, ease: defaultEasing } }
 };
 
-export const navbarSlideInVariants = {
+export const navbarFadeInVariants = {
 	hidden: { opacity: 0, transition: { duration: .2 } },
 	visible: { opacity: 1, transition: { duration: .2 } }
 }
@@ -61,6 +61,12 @@ export const authPageFadeInVariants = {
 	initial: { opacity: 0, transition: { duration: .6, ease: defaultEasing }},
 	animate: { opacity: 1, transition: { duration: .6, ease: defaultEasing }},
 	exit: { opacity: 0, transition: { duration: .6, ease: defaultEasing }}
+};
+
+export const creditsFadeInUpVariants = {
+	initial: { y: 60, opacity: 0, transition: { duration: .8, ease: defaultEasing } },
+	animate: { y: 0, opacity: 1, transition: { delay: .8, duration: .8, ease: defaultEasing } },
+	exit: { y: 60, opacity: 0, transition: { duration: .8, ease: defaultEasing }  }
 };
 
 export const defaultPageFadeInVariants = {
