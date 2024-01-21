@@ -5,7 +5,8 @@ import useScroll from "../../hooks/useScroll";
 import useOutsideClick from "../../hooks/useOutsideClick";
 import { motion } from "framer-motion";
 import { navbarFadeInVariants } from "../../motionUtils";
-import { LOGO_URL, MOBILE_LOGO_URL, PROFILE_PIC_URL } from "../../requests";
+import { PROFILE_PIC_URL } from "../../requests";
+import logo from "./Navbar_Logo.png";
 import { FaCaretDown } from "react-icons/fa";
 import { Link, NavLink } from "react-router-dom";
 import Searchbar from "../Searchbar/Searchbar";
@@ -40,7 +41,7 @@ const Navbar = () => {
 				exit="hidden"
 			>
 				<Link to="/">
-					<img className="Navbar__logo" src={width >= 600 ? LOGO_URL : MOBILE_LOGO_URL} alt="" />
+					<img className="Navbar__logo" src={logo} alt="" />
 				</Link>
 				{width >= 1024 ? (
 					<ul className="Navbar__primarynav Navbar__navlinks">

@@ -1,6 +1,6 @@
 import "./popular.scss"
 import Row from "../../components/Row/Row"
-import Credits from "../../components/Credits/Credits";
+import Credits from "../../components/Footer/Footer";
 import { useRetrieveData } from "../../hooks/useRetrieveData";
 import { motion } from "framer-motion";
 import { defaultPageFadeInVariants } from "../../motionUtils";

@@ -91,7 +91,7 @@ const Row = ({ selector, title, genre, isLarge }) => {
 					<h3 className="Row__title">
 						<Link to={`${pathname}/${genre}`}>
 							<span>{title}</span>
-							<span className='Row__showmore'>Show all <FiChevronRight/></span>
+							<span className='Row__explore'>Explore All<FiChevronRight/></span>
 						</Link>
 					</h3>
 				)

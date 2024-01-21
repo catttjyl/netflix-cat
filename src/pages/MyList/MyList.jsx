@@ -1,6 +1,6 @@
 import "./myList.scss"
 import Poster from "../../components/Poster/Poster";
-import Credits from "../../components/Credits/Credits";
+import Credits from "../../components/Footer/Footer";
 import { motion } from "framer-motion";
 import { staggerHalf, defaultPageFadeInVariants } from "../../motionUtils";
 import { useSelector } from "react-redux"
