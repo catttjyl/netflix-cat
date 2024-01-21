@@ -12,7 +12,8 @@
     &__title {
         margin-bottom: 1rem;
         padding: 0 4%;
-        font-size: 16px;
+        font-size: 18px;
+        font-weight: 600;
         line-height: 1.25vw;
         text-align: left;
         display: inline-block;
@@ -21,7 +22,7 @@
             font-size: 18px;
         }
         @include mq(1330px){
-            font-size: 1.2vw;
+            font-size: 1.4vw;
         }
 
         a {
@@ -30,7 +31,7 @@
         }
 
         &:hover {
-            .Row__showmore {
+            .Row__explore {
                 opacity: 1;
                 max-width: 200px;
                 transform: translate(1vw,0);
@@ -38,12 +39,13 @@
         }
     }
 
-    &__showmore {
+    &__explore {
         font-size: 12px;
+        font-weight: 600;
         line-height: 1vw;
         display: inline-flex;
         align-items: center;
-        color: $white;
+        color: #54b9c5;
         white-space: nowrap;
         opacity: 0;
         max-width: 0;

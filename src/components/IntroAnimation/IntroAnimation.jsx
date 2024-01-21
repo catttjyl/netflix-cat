@@ -1,10 +1,10 @@
-import "./splashAnimation.scss"
+import "./introAnimation.scss"
 import { useEffect, useRef } from "react";
 import { useHistory } from "react-router-dom";
 import { TADUM_SOUND_URL } from "../../requests";
 import { motion } from "framer-motion";
 
-const SplashAnimation = () => {
+const IntroAnimation = () => {
 
 	let history = useHistory();
 	const soundRef = useRef(null);
@@ -29,14 +29,14 @@ const SplashAnimation = () => {
 
 	return (
 		<motion.div
-			id="SplashAnimation__wrp"
-			className='SplashAnimation'
+			id="IntroAnimation__wrp"
+			className='IntroAnimation'
 			initial={{opacity: 0}}
 			animate={{opacity: 1}}
 			exit={{opacity: 0}}
 		>
 			<audio ref={soundRef} src={TADUM_SOUND_URL} />
-			<div className="netflixintro" data-letter="F">
+			<div className="netflixintro" data-letter="N">
 				<div className="helper-1">
 					<div className="effect-brush">
 						<span className="fur-31"></span>
@@ -212,4 +212,4 @@ const SplashAnimation = () => {
 	)
 }
 
-export default SplashAnimation
+export default IntroAnimation
