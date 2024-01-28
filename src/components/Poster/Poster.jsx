@@ -1,7 +1,8 @@
 import "./poster.scss"
 import { motion } from "framer-motion";
 import { posterFadeInVariants } from "../../motionUtils";
-import { BASE_IMG_URL, FALLBACK_IMG_URL } from "../../requests";
+import { BASE_IMG_URL } from "../../requests";
+import NO_IMG from "./logo.png";
 import { FaChevronDown, FaMinus, FaPlay, FaPlus } from "react-icons/fa";
 import useGenreConversion from "../../hooks/useGenreConversion";
 import { showModalDetail } from "../../redux/modal/modal.actions";
@@ -42,10 +43,10 @@ const Poster = result => {
                 <img src={`${BASE_IMG_URL}/${backdrop_path}`} alt={fallbackTitle} />
             ) : (
                 <>
-                    <img src={FALLBACK_IMG_URL} alt={fallbackTitle} />
-                    <div className='Poster__fallback'>
+                    <img src={NO_IMG} alt={fallbackTitle} />
+                    {/* <div className='Poster__fallback'>
                         <span>{fallbackTitle}</span>
-                    </div>
+                    </div> */}
                 </>
             )}
             <div className="Poster__info">

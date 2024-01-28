@@ -5,8 +5,9 @@ import SignUp from "../../components/SignUp/SignUp";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { staggerOne, authFadeInUpVariants, modalVariants, authPageFadeInVariants } from "../../motionUtils";
-import { SIGNIN_BGIMG_URL } from "../../requests.js";
+// import { SIGNIN_BGIMG_URL } from "../../requests.js";
 import logo from "./logo.png";
+import bgimage from "./login_bg_image.jpeg"
 import { useSelector } from "react-redux";
 import { selectAuthErrors } from "../../redux/auth/auth.selectors";
 
@@ -23,7 +24,7 @@ const Auth = () => {
 			exit="exit"
 		>
 			<div className="Auth__opacityLayer" />
-			<div className="Auth__bgLayer" style={{ backgroundImage: `url(${SIGNIN_BGIMG_URL})` }} />
+			<div className="Auth__bgLayer" style={{ backgroundImage: `url(${bgimage})`}} />
 			<Link to="/" className="Auth__logo">
 				<img className="Auth__logo--img" src={logo} alt="Netflix_logo" />
 			</Link>
