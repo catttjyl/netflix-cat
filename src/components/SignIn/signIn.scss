@@ -5,10 +5,16 @@
   &__form {
     &--inputwrp {
       margin: 0.6em 0;
+      
 
       @include mq(xs) {
         margin: 1em 0;
       }
+
+      // :focus {
+      //   border: 1px solid white;
+      //   box-shadow: 0 0 0 1px #fff;
+      // }
     }
 
     &--button {
@@ -16,7 +22,7 @@
       justify-content: center;
       align-items: center;
       width: 100%;
-      min-height: 45px;
+      min-height: 40px;
       box-shadow: none;
       border: 1px solid transparent;
       padding: 1.2em 0.8em;
@@ -25,7 +31,7 @@
       font-family: $main-font;
       font-size: 13px;
       font-weight: 500;
-      line-height: 1;
+      line-height: 0;
       transition: all 0.2s ease-out;
       cursor: pointer;
 
@@ -42,7 +48,7 @@
       }
 
       @include mq(xs) {
-        min-height: 60px;
+        min-height: 50px;
         font-size: 15px;
       }
 
@@ -68,9 +74,8 @@
           border: 1px solid $black;
 
           &:hover {
-            background-color: $black;
+            background-color: darken($color: $blue-google, $amount: 8);
             color: $white;
-            border: 1px solid $white;
             transform: scale(0.95);
           }
         }
