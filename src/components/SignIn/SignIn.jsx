@@ -34,7 +34,7 @@ const SignIn = () => {
 				<InputField
 					type="text"
 					name="email"
-					placeholder="E-mail"
+					placeholder="Email"
 					validationMessage="Please enter a valid email address."
 					validation={register({
 						required: true,
