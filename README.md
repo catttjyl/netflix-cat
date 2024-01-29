@@ -25,8 +25,16 @@ Link to this clone netflix website:
 - [React Hooks Form](https://react-hook-form.com/) &nbsp;&nbsp; • &nbsp;&nbsp; [React Router](https://reactrouter.com/web/guides/quick-start) &nbsp;&nbsp; • &nbsp;&nbsp; [Redux](https://redux.js.org/)
 - [Redux Thunk](https://github.com/reduxjs/redux-thunk) &nbsp;&nbsp; • &nbsp;&nbsp; [Redux Saga](https://redux-saga.js.org/) &nbsp;&nbsp; • &nbsp;&nbsp; [Redux Persist](https://github.com/rt2zz/redux-persist)
 - [Redux Logger](https://github.com/LogRocket/redux-logger) &nbsp;&nbsp; • &nbsp;&nbsp; [Reselect](https://github.com/reduxjs/reselect) &nbsp;&nbsp; • &nbsp;&nbsp; [Firebase](https://firebase.google.com/)
-- [SCSS](https://sass-lang.com/)&nbsp;&nbsp; • &nbsp;&nbsp; [SwiperJS](https://swiperjs.com/react) &nbsp;&nbsp; • &nbsp;&nbsp; [Redux Persist][Framer Motion](https://www.framer.com/motion/)
+- [SCSS](https://sass-lang.com/)&nbsp;&nbsp; • &nbsp;&nbsp; [SwiperJS](https://swiperjs.com/react) &nbsp;&nbsp; • &nbsp;&nbsp; [Framer Motion](https://www.framer.com/motion/)
 - [React Icons](https://react-icons.github.io/react-icons/) &nbsp;&nbsp; • &nbsp;&nbsp; [Netlify](https://www.netlify.com)
+
+| | | |
+| [TMDb API's](https://www.themoviedb.org/) | [React](https://reactjs.org/) | [React Hooks](https://reactjs.org/docs/hooks-intro.html) |
+| [React Hooks Form](https://react-hook-form.com/) | [React Router](https://reactrouter.com/web/guides/quick-start) | [Redux](https://redux.js.org/) |
+| [Redux Thunk](https://github.com/reduxjs/redux-thunk) | [Redux Saga](https://redux-saga.js.org/) | [Redux Persist](https://github.com/rt2zz/redux-persist) |
+| [Redux Logger](https://github.com/LogRocket/redux-logger) | [Reselect](https://github.com/reduxjs/reselect) | [Firebase](https://firebase.google.com/) |
+| [SCSS](https://sass-lang.com/)&nbsp;&nbsp; | [SwiperJS](https://swiperjs.com/react) | [Framer Motion](https://www.framer.com/motion/)|
+| [React Icons](https://react-icons.github.io/react-icons/) | [Netlify](https://www.netlify.com) |
 
 <br/>
 
