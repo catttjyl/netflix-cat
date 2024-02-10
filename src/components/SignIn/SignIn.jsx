@@ -67,16 +67,9 @@ const SignIn = () => {
 			>
 				{isLoading ? <Loader /> : 'Sign in'}
 			</motion.button>
-			<motion.button
-				type="button"
-				variants={authFadeInUpVariants}
-				className={`SignIn__form--button button__google ${isLoading && 'loading'}`}
-				onClick={() => dispatch(googleSignInStart())}
-				disabled={isLoading}
-			>
-				{!isLoading && <FcGoogle />}
-				{isLoading ? <Loader /> : 'Sign in with Google'}
-			</motion.button>
+			<motion.small variants={authFadeInUpVariants} className="SignIn__form--divider">
+				OR
+			</motion.small>
 			<motion.button
 				type="button"
 				variants={authFadeInUpVariants}
@@ -86,6 +79,12 @@ const SignIn = () => {
 			>
 				{isLoading ? <Loader /> : 'Sign in anonymously'}
 			</motion.button>
+			<motion.small variants={authFadeInUpVariants} className="SignIn__form--toggleView">
+				Sign in with <span>&nbsp;</span>
+				<span className="toggler" onClick={() => dispatch(googleSignInStart())}>
+					<FcGoogle />Google.
+				</span>
+			</motion.small>
 		</motion.form>
 	)
 }
