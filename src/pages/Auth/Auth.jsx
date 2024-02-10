@@ -44,7 +44,7 @@ const Auth = () => {
 					</motion.small> */}
 					{isSignedUp ? <SignIn /> : <SignUp />}
 					{authError && <motion.p variants={authFadeInUpVariants} className='Auth__content--errors'>{authError}</motion.p>}
-					<motion.hr variants={authFadeInUpVariants} className="Auth__content--divider" />
+					{/* <motion.hr variants={authFadeInUpVariants} className="Auth__content--divider" /> */}
 					<motion.small variants={authFadeInUpVariants} className="Auth__content--toggleView">
 						{isSignedUp
 							? `New to Netflix? `
