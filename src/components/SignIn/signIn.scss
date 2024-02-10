@@ -17,6 +17,15 @@
       // }
     }
 
+    &--divider {
+      display: inherit;
+      font-family: $main-font;
+      font-size: 16px;
+      line-height: 3em;
+      color: #B8B8B9;
+      text-align: center;
+    }
+
     &--button {
       display: flex;
       justify-content: center;
@@ -26,7 +35,6 @@
       box-shadow: none;
       border: 1px solid transparent;
       padding: 1.2em 0.8em;
-      margin-top: 0.5em;
       border-radius: 5px;
       font-family: $main-font;
       font-size: 13px;
@@ -39,13 +47,13 @@
         outline: none;
       }
 
-      &:nth-of-type(1) {
-        margin-top: 1.5em;
+      // &:nth-of-type(1) {
+      //   margin-top: 1.5em;
 
-        @include mq(xs) {
-          margin-top: 2em;
-        }
-      }
+      //   @include mq(xs) {
+      //     margin-top: 2em;
+      //   }
+      // }
 
       @include mq(xs) {
         min-height: 50px;
@@ -69,12 +77,12 @@
         }
 
         &__google {
-          background-color: $blue-google;
+          background-color: $google-butt;
           color: $white;
           border: 1px solid $black;
 
           &:hover {
-            background-color: darken($color: $blue-google, $amount: 8);
+            background-color: darken($color: $google-butt, $amount: 8);
             color: $white;
             transform: scale(0.95);
           }
@@ -103,6 +111,42 @@
         }
       }
 
+    }
+
+    &--toggleView {
+      display: inherit;
+      font-family: $main-font;
+      font-size: 13px;
+      line-height: 1.4;
+      color: #B8B8B9;
+      // text-align: center;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1rem;
+
+      .toggler {
+          display: inline-block;
+          color: $white;
+          font-weight: bold;
+          font-size: 13px;
+          line-height: 1.4;
+          cursor: pointer;
+          transition: all 0.2s ease-out;
+
+          &:hover {
+              color: darken($red, 5);
+              transform: scale(0.95);
+              text-decoration: underline;
+          }
+
+          @include mq(md) {
+              font-size: 16px;
+          }
+      }
+
+      @include mq(md) {
+          font-size: 16px;
+      }
     }
   }
 }
