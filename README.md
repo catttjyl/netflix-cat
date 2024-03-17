@@ -2,7 +2,7 @@
 
 Link to this clone netflix website:
 
-- [Netflix (clone)](https://netflix-cat.netlify.app)
+- [Netflix (clone)](https://netflixcatt.netlify.app/)
 
 ### Example account for your convenient to use
 
