@@ -2,14 +2,14 @@
 
 Link to this clone netflix website:
 
-- [Netflix （clone)](https://netflix-cat.netlify.app)
+- [Netflix (clone)](https://netflix-cat.netlify.app)
 
 ### Example account for your convenient to use
 
 > Email: cat123@test.com<br/>
 > Password: 123456<br/>
 
-### Feel free to use the "Sign in anonymously" option
+Feel free to use the "Sign in anonymously" option
 
 <br/>
 
